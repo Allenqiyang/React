@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsx event bindings</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="../JS/react.development.js"></script>
+  <script src="../JS/react-dom.development.js"></script>
+  <script src="../JS/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+
+        this.state = {
+          message: "Hello!",
+          counter: 10
+        }
+
+        this.click = this.click.bind(this)
+      }
+
+      render() {
+        return (
+          <div>
+            {/* 1. 通过bind绑定this */}
+            <button onClick={this.click}>click</button>
+            <button onClick={this.click}>click</button>
+            <button onClick={this.click}>click</button>
+
+            {/* 2. 使用箭头函数 */}
+            <button onClick={this.increase}> +1 </button>
+
+            {/* 3. 直接传入箭头函数，在箭头函数中调用需要执行的函数 */}
+            <button onClick={ () => this.decrease() }> -1 </button>
+          </div>
+        )
+      }
+
+      click() {
+        console.log(this.state.message)
+      }
+
+      increase = () => {
+        console.log(this.state.counter)
+        this.state.counter++
+      }
+
+      decrease() {
+        console.log(this.state.counter)
+        this.state.counter--
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'))
+  </script>
+</body>
+</html>

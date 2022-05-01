@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Params transfer in jsx</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script src="../JS/react.development.js"></script>
+  <script src="../JS/react-dom.development.js"></script>
+  <script src="../JS/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+
+        this.state = {
+          movies: ["星际迷航", "火星救援", "星际穿越", "流浪地球"]
+        }
+
+        this.click = this.click.bind(this)
+      }
+
+      render() {
+        return (
+          <div>
+            <button onClick={this.click}>Button</button>
+            <ul>
+              {
+                this.state.movies.map((movie, index, arr) => {
+                  return <li onClick={ event => this.liClick(movie, index, event)}>{movie}</li>
+                })
+              }
+            </ul>
+          </div>
+        )
+      }
+
+      click(event) {
+        console.log("click", event)
+      }
+      liClick(movie, index, event) {
+        console.log("liClick", movie, index, event)
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'))
+  </script>
+</body>
+</html>
