@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="app">app</div>
+    <script src="../JS/react.development.js"></script>
+    <script src="../JS/react-dom.development.js"></script>
+    <script src="../JS/babel.min.js"></script>
+    
+    <script type="text/babel">
+        let message = "Hello world"
+
+        function click(){
+            message = "Hello React"
+            console.log(message)
+            render()
+        }
+
+        function render() {
+            ReactDOM.render(
+                <div>
+                    <h2>{message}</h2>
+                    <button onClick={click}>change</button>
+                </div>,
+                document.getElementById("app")
+            )
+        }
+
+        render()
+        
+    </script>
+</body>
+</html>

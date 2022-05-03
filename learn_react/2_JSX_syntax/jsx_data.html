@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data in jsx</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="../JS/react.development.js"></script>
+  <script src="../JS/react-dom.development.js"></script>
+  <script src="../JS/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+
+        // 在{}可以正常显示的内容
+        this.state = {
+          name: "Allen",  //string
+          age: 18,    //number
+          names: ["Tony", "Stark"],     //Array
+
+          // 在{}不会显示
+          test: null, //null
+          test2: undefined, //undefined
+          test3: true,  //Boolean
+
+          // 对象不能作为jsx的子类
+          friend: {
+            name: "John",
+            age: 18
+          }
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            {/* 我是一段注释 */}
+
+            <h3>{this.state.name}</h3>
+            <h3>{this.state.age}</h3>
+            <h3>{this.state.names}</h3>
+
+            <h3>{this.state.test + ""}</h3>
+            <h3>{this.state.test2 + ""}</h3>
+            <h3>{this.state.test3.toString()}</h3>
+
+            <h3>{this.state.friend}</h3>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'))
+  </script>
+</body>
+</html>

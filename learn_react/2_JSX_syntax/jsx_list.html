@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="../JS/react.development.js"></script>
+  <script src="../JS/react-dom.development.js"></script>
+  <script src="../JS/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor() {
+        super()
+
+        this.state = {
+          names: ["Allen", "Tony", "Tom", "Jerry"],
+          nums: [23,46,37,56,90,71,36,67]
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <h2>Name List</h2>
+            <ul>
+              {
+                this.state.names.map(item => <li>{item}</li>)
+              }  
+            </ul>
+
+            <h2>Number List</h2>
+            <ul>
+              {
+                this.state.nums.filter(item => {
+                  return item >= 50
+                }).map(item => {
+                  return <li>{item}</li>
+                })
+              }
+            </ul>
+
+            <h2>Number List</h2>
+            <ul>
+              {
+                this.state.nums.filter(item => item >= 50).map(item => <li>{item}</li>)
+              }
+            </ul>
+
+            <h2>Number List(partial)</h2>
+            <ul>
+              {
+                this.state.nums.slice(0,4).map(item => {
+                  return <li>{item}</li>
+                })
+              }  
+            </ul>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'))
+  </script>
+</body>
+</html>
