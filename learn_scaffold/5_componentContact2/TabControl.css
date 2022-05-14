@@ -1,0 +1,18 @@
+.tab-control {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  line-height: 50px;
+}
+
+.tab-title.active {
+  color: rgb(114, 175, 255);
+}
+
+.tab-title.active span{
+  border-bottom: 3px solid rgb(127, 191, 255);
+}
+
+.tab-title span {
+  padding: 5px 8px;
+}
