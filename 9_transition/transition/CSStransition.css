@@ -1,0 +1,29 @@
+.card-enter, .card-appear {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.card-enter-active, .card-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 700ms, transform 700ms;
+}
+
+.card-enter-done, .card-appear-done {
+  opacity: 1;   /* 这里不写其实也可以 */
+}
+
+.card-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-exit-active {
+  opacity: 0;
+  transition: opacity 700ms, transform 700ms;
+  transform: scale(0.6);
+}
+
+.card-exit-done {
+  opacity: 0;
+}
