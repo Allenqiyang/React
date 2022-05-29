@@ -1,4 +1,4 @@
-import {add, sub, inc, dec, change_b, change_r} from './constant.js'
+import {add, sub, inc, dec, change_b, change_r, fetch} from './constant.js'
 import axios from 'axios'
 // function addAction(num) {
 //   return {
@@ -52,4 +52,8 @@ export const getHomeMultidataAction = dispatch => {
     dispatch(changeBannersAction(data.banner.list))
     dispatch(changeRecommendAction(data.recommend.list))
   })
+}
+
+export const fetchHomeMultidataAction = {
+  type: fetch
 }
