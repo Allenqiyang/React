@@ -34,9 +34,9 @@ function About(props) {
 
 const mapStateToProps = state => {
   return {
-    counter: state.counter,
-    banners: state.banners,
-    recommends: state.recommends
+    counter: state.counterInfo.counter,
+    banners: state.homeInfo.banners,
+    recommends: state.homeInfo.recommends
   }
 }
 

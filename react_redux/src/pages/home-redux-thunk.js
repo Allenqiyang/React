@@ -24,7 +24,7 @@ class Home extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  counter: state.counter
+  counter: state.counterInfo.counter
 })
 
 const mapDispatchToProps = dispatch => ({
