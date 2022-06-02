@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {addAction} from '../store/actionCreators'
+import {addAction} from '../store/counter/actionCreators'
 // import {connect} from '../utils/connect'
 import {connect} from 'react-redux'
 

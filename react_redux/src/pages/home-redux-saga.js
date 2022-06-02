@@ -2,7 +2,8 @@
 import React, { PureComponent } from 'react'
 
 // import axios from 'axios'
-import { subAction, fetchHomeMultidataAction } from '../store/actionCreators'
+import {subAction} from '../store/counter/actionCreators'
+import { fetchHomeMultidataAction } from '../store/home/actionCreators'
 import {connect} from 'react-redux'
 
 class Home extends PureComponent {
