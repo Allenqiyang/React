@@ -1,0 +1,15 @@
+import React, {useState} from 'react'
+
+export default function CounterHook() {
+  const [count, setCount] = useState(0)
+
+  console.log("counter is rendered")
+
+  return (
+    <div>
+      <h3>Counter: {count}</h3>
+      <button onClick={() => setCount(count + 1)}> +1 </button>
+      <button onClick={() => setCount(count - 1)}> -1 </button>
+    </div>
+  )
+}
