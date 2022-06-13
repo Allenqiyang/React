@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { useState, createContext } from 'react'
 
 // import CounterClass from './1_first_hooks/couter_class'
 // import CounterHook from './1_first_hooks/counter_hook2'
@@ -13,13 +13,24 @@ import React, { createContext } from 'react'
 // import Home from './5_useReducer/Home'
 // import Callback from './6_useCallback/performance'
 // import MemoHook from './7_useMemo/MemoHook'
-import ChildComp from './7_useMemo/childComp'
+// import ChildComp from './7_useMemo/childComp'
+// import RefHookDemo from './8_useRef/useRefDOM'
+// import OtherData from './8_useRef/otherData'
+// import ForwardRef from './9_useImperativeHandle/forwardRef'
+// import UseImperative from './9_useImperativeHandle/useImperative'
+// import UseEffect from './10_useLayoutEffect/useEffect'
+// import LayoutEffect from './10_useLayoutEffect/layoutEffect'
+// import CustomLifeHook from './11_customHook/customHook'
+// import ContextShare from './11_customHook/contextShare'
+// import GetPosition from './11_customHook/getPosition'
+import LocalStorage from './11_customHook/localStorage'
 
 export const UserContext = createContext()
+export const TokenContext = createContext()
 export const ThemeContext = createContext()
 
 export default function App() {
-  // const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true)
   return (
     <div>
       {/* <CounterClass/> */}
@@ -29,7 +40,6 @@ export default function App() {
       {/* <ClassTitle/> */}
       {/* <HookTitle/> */}
       {/* {show && <Subscribe/>} */}
-      {/* <button onClick={() => setShow(!show)}>change</button> */}
 
       {/* <MultiUseEffect/> */}
       {/* <UserContext.Provider value={{name: "Allen", age: 18}}>
@@ -44,7 +54,25 @@ export default function App() {
       {/* <Callback/> */}
 
       {/* <MemoHook/> */}
-      <ChildComp/>
+      {/* <ChildComp/> */}
+      {/* <RefHookDemo/> */}
+      {/* <OtherData/> */}
+
+      {/* <ForwardRef/> */}
+      {/* <UseImperative/> */}
+      {/* <UseEffect/> */}
+      {/* <LayoutEffect/> */}
+      
+      {/* {show && <CustomLifeHook/>} */}
+      {/* <UserContext.Provider value={{name: "Allen", age: 18}}>
+        <TokenContext.Provider value="yeah">
+          <ContextShare/>
+        </TokenContext.Provider>
+      </UserContext.Provider> */}
+      {/* <GetPosition/> */}
+      <LocalStorage/>
+
+      <button onClick={() => setShow(!show)}>change</button>
     </div>
   )
 }
